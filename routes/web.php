@@ -13,8 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $welcome = "Homepage Laravel Primi Passi";
+Route::get('/', function() {
+    $title = 'Homepage Laravel Primi Passi';
+    $message = 'Pagina principale';
+    
+    return view('pages.contacts', compact('title', 'message'));
+})->name('homepage');
 
-    return view('home', compact('welcome'));
-});
+Route::get('/about', function() {
+    $title = 'About Us';
+    $message = 'Lorem ipsum dolor sit amet';
+    
+    return view('pages.contacts', compact('title', 'message'));
+})->name('about');
+
+Route::get('/contacts', function() {
+    $title = 'Contatti';
+    $message = 'Contattaci per ricevere le nostre ultime notizie.';
+    
+    return view('pages.contacts', compact('title', 'message'));
+})->name('contacts');
