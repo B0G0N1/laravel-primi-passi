@@ -17,14 +17,14 @@ Route::get('/', function() {
     $title = 'Homepage Laravel Primi Passi';
     $message = 'Pagina principale';
     
-    return view('pages.contacts', compact('title', 'message'));
+    return view('home', compact('title', 'message'));
 })->name('homepage');
 
 Route::get('/about', function() {
     $title = 'About Us';
     $message = 'Lorem ipsum dolor sit amet';
     
-    return view('pages.contacts', compact('title', 'message'));
+    return view('pages.about', compact('title', 'message'));
 })->name('about');
 
 Route::get('/contacts', function() {
